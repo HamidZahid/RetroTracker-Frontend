@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { useRetro } from '@/hooks/useRetros';
-import { useCards, useCreateCard, useUpdateCard, useDeleteCard } from '@/hooks/useCards';
+import { useCards, useUpdateCard, useDeleteCard } from '@/hooks/useCards';
 import { useAuth } from '@/contexts/AuthContext';
 import { CreateCardDialog } from '@/components/cards/CreateCardDialog';
 import { EditCardDialog } from '@/components/cards/EditCardDialog';
@@ -49,7 +49,6 @@ export function RetroBoardPage() {
 
   const { data: retro, isLoading: retroLoading } = useRetro(retroId);
   const { data: cards = [], isLoading: cardsLoading } = useCards(retroId);
-  const createCard = useCreateCard(retroId!);
   const updateCard = useUpdateCard(retroId!);
   const deleteCard = useDeleteCard(retroId!);
 

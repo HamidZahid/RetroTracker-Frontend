@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import api from '@/lib/api';
-import type { LoginCredentials, RegisterData, AuthResponse, ApiResponse } from '@/types';
+import type { LoginCredentials, RegisterData, AuthResponse, ApiResponse, User } from '@/types';
 import { useToast } from '@/hooks/use-toast';
 
 export function useLogin() {

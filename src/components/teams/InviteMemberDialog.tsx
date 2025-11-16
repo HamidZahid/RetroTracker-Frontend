@@ -10,7 +10,7 @@ import { useInviteMember } from '@/hooks/useTeams';
 
 const inviteSchema = z.object({
   email: z.string().email('Invalid email address'),
-  role: z.enum(['admin', 'member']).default('member'),
+  role: z.enum(['admin', 'member']),
 });
 
 type InviteFormData = z.infer<typeof inviteSchema>;

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useTeam, useTeamMembers, useInviteMember, useRemoveMember } from '@/hooks/useTeams';
+import { useTeam, useTeamMembers, useRemoveMember } from '@/hooks/useTeams';
 import { useAuth } from '@/contexts/AuthContext';
 import { InviteMemberDialog } from '@/components/teams/InviteMemberDialog';
 import { formatRelativeTime } from '@/lib/utils';
@@ -19,7 +19,6 @@ export function TeamMembersPage() {
 
   const { data: team, isLoading: teamLoading } = useTeam(teamId);
   const { data: members = [], isLoading: membersLoading } = useTeamMembers(teamId);
-  const inviteMember = useInviteMember(teamId!);
   const removeMember = useRemoveMember(teamId!);
 
   const isOwner = team?.members.find((m) => m.userId === user?._id)?.role === 'admin';
