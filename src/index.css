@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Base colors - Clean modern neutral */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
+
+    /* Card - Crisp white */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+
+    /* Primary - Electric Blue (Modern, Trust, Professional) */
+    --primary: 212 100% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Cool gray */
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted - Light gray */
+    --muted: 210 15% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Vibrant Teal */
+    --accent: 180 85% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Bold Red */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border - Subtle */
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 212 100% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradient colors - Vibrant & Modern */
+    /* Primary: Electric Blue to Bright Cyan */
+    --gradient-start: 212 100% 48%;
+    --gradient-middle: 195 100% 50%;
+    --gradient-end: 180 85% 45%;
+
+    /* Success: Emerald Green to Fresh Lime */
+    --success-start: 158 85% 38%;
+    --success-end: 142 76% 45%;
+
+    /* Warning: Vibrant Orange to Golden Amber */
+    --warning-start: 25 100% 55%;
+    --warning-end: 38 100% 50%;
+
+    /* Info: Sky Blue to Electric Blue */
+    --info-start: 200 100% 50%;
+    --info-end: 212 100% 48%;
+
+    /* Chart colors - Vibrant */
+    --chart-1: 212 100% 48%;
+    --chart-2: 25 100% 55%;
+    --chart-3: 158 85% 38%;
+    --chart-4: 180 85% 45%;
+    --chart-5: 280 65% 55%;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 15% 96%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 210 15% 96%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 15% 96%;
+
+    --primary: 212 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 210 15% 85%;
+
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 10% 60%;
+
+    --accent: 180 85% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 212 100% 55%;
+
+    --gradient-start: 212 100% 50%;
+    --gradient-middle: 195 100% 52%;
+    --gradient-end: 180 85% 48%;
+
+    --success-start: 158 85% 40%;
+    --success-end: 142 76% 48%;
+
+    --warning-start: 25 100% 58%;
+    --warning-end: 38 100% 52%;
+
+    --info-start: 200 100% 52%;
+    --info-end: 212 100% 50%;
+
+    --chart-1: 212 100% 50%;
+    --chart-2: 25 100% 58%;
+    --chart-3: 158 85% 40%;
+    --chart-4: 180 85% 48%;
+    --chart-5: 280 65% 58%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Professional gradient utilities */
+@layer utilities {
+  /* Vibrant gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-middle)) 50%, hsl(var(--gradient-end)) 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, hsl(var(--success-start)) 0%, hsl(var(--success-end)) 100%);
+  }
+
+  .gradient-warning {
+    background: linear-gradient(135deg, hsl(var(--warning-start)) 0%, hsl(var(--warning-end)) 100%);
+  }
+
+  .gradient-info {
+    background: linear-gradient(135deg, hsl(var(--info-start)) 0%, hsl(var(--info-end)) 100%);
+  }
+
+  /* Advanced gradient mesh with vibrant colors */
+  .gradient-mesh {
+    background:
+      radial-gradient(circle at 10% 20%, hsl(var(--gradient-start) / 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 90% 10%, hsl(var(--warning-start) / 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(var(--success-start) / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 20% 90%, hsl(var(--info-start) / 0.25) 0%, transparent 50%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 20% 95%) 100%);
+  }
+
+  /* Glassmorphism with better clarity */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .dark .glass-card {
+    background: rgba(20, 25, 35, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  /* Smooth gradient animation */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Enhanced hover lift effect */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+      0 20px 40px -10px rgba(0, 0, 0, 0.15),
+      0 10px 20px -5px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+
+  /* Glow effect for interactive elements */
+  .glow-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+  }
+
+  .glow-effect:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Shimmer loading effect */
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+
+  .shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+
+  /* Card border gradient on hover */
+  .border-gradient {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--warning-start)), hsl(var(--success-start)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .border-gradient:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Ensure Popover and Select appear above all content with solid backgrounds */
+@layer utilities {
+  [data-radix-popper-content-wrapper] {
+    z-index: 9999 !important;
+  }
+  
+  [data-radix-popover-content] {
+    z-index: 9999 !important;
+    position: fixed !important;
+    background-color: hsl(var(--popover)) !important;
+  }
+
+  /* Select dropdowns should appear above dialogs with solid backgrounds */
+  [data-radix-select-content] {
+    z-index: 100 !important;
+    background-color: hsl(var(--popover)) !important;
+  }
+
+  [data-radix-select-viewport] {
+    z-index: 100 !important;
+    background-color: hsl(var(--popover)) !important;
+  }
+
+  /* Dropdown menu with solid background */
+  [data-radix-dropdown-menu-content] {
+    background-color: hsl(var(--popover)) !important;
+  }
+
+  /* Command component with solid background */
+  [cmdk-root] {
+    background-color: hsl(var(--popover)) !important;
+  }
+}
