@@ -19,6 +19,13 @@ A modern, collaborative team retrospective management application built with Rea
 - **Beautiful UI**: Modern, responsive design with gradient accents and smooth animations
 - **Dark Mode**: Support for light and dark themes
 
+## 🎬 Demo
+
+Watch the demo videos to see Retro Tracker in action:
+
+1. **Demo Video 1**: [Watch on Loom](https://www.loom.com/share/2250694abbf14798a339ab5641cf7332)
+2. **Demo Video 2**: [Watch on Loom](https://www.loom.com/share/6f0eef69ab424d5ca2fd3ee8973e092c)
+
 ## 🚀 Tech Stack
 
 - **Frontend Framework**: React 19 with TypeScript
